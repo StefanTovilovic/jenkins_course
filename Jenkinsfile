@@ -101,6 +101,14 @@ pipeline {
                 }
             }
         }
+        stage('Dynamic') {
+            when {
+                branch 'feature/multi/*'
+            }
+            steps {
+                echo (message: "New Stage")
+            }
+        }
     }
     post {
         always {
